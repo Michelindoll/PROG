@@ -12,4 +12,4 @@ def nummerCheck(nummer):
     dict_list = []
     for line in reader:
 
-# check of de fiets bij de gebruiker hoort
+# check of de fiets bij de gebruiker  hoort
