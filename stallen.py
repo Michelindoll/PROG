@@ -36,6 +36,6 @@ def datumEnTijd():
     huidigeDatumEnTijd = datetime.datetime.now().strftime('%d-%m-%Y, %H:%M:%S')
     return huidigeDatumEnTijd
 nummerInvoeren()
-nummerCheck(nummerInvoeren())
+nummerCheck(nummerInvoeren)
 naamInvoeren()
-naamCheck(naamInvoeren())
+naamCheck(naamInvoeren)
