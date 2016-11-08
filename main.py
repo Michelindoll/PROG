@@ -34,6 +34,20 @@ def showInterface():
                     print(aantalPlaatsenBeschikbaar())
                     print('')
                 if invoer == 2:
-                    print('Call algemene voorwaarden')
+                    print('')
+                    print('Fiets weg? - Eigen schuld')
+                    print('Band lek? - Eigen schuld')
+                    print('Fietsenstalling afgebrand? - Eigen schuld')
+                    print('thermonucleaire oorlog uitgebroken? - Eigen schuld')
+                    print('')
+            if invoer == 2:
+                print('')
+                print('Voer uw naam in om uw persoonlijke gegevens op te vragen.')
+                invoer = input('Naam: ')
+                modelFiets(invoer)
+                print('')
+
 
 showInterface()
+
+
