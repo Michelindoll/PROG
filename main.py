@@ -35,6 +35,13 @@ def showInterface():
                     print('')
                 if invoer == 2:
                     print('Call algemene voorwaarden')
+            if invoer == 2:
+                print('')
+                print('Voer uw naam in om uw persoonlijke gegevens op te vragen.')
+                invoer = input('Naam: ')
+                modelFiets(invoer)
+                print('')
+
 
 showInterface()
 
