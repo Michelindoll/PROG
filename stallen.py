@@ -11,7 +11,7 @@ def nummerCheck(nummer):
     reader = csv.DictReader(open('gebruikers.csv', 'r'))
     dict_list = []
     for line in reader:
-        
+         
 
 def naamInvoeren():
     #pakt de ingevoerde naam van de gebruiker
