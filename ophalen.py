@@ -1,5 +1,6 @@
 import time
 import datetime
+import csv
 
 def naamInvoeren():
     #pakt de ingevoerde naam van de gebruiker
@@ -13,3 +14,4 @@ def nummerCheck(nummer):
     for line in reader:
 
 # check of de fiets bij de gebruiker  hoort
+def naamInvoeren == nummerCheck
