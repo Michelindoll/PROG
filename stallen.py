@@ -1,5 +1,6 @@
 import time
 import datetime
+import csv
 def nummerInvoeren():
     #pakt het ingevoerde nummer van de gebruiker
     ingevoerdeNummer = int(input("Voer uw gebruikersnummer in. "))
