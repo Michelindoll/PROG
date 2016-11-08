@@ -3,7 +3,7 @@ import datetime
 import csv
 def nummerInvoeren():
     #pakt het ingevoerde nummer van de gebruiker
-    ingevoerdeNummer = int(input("Voer uw gebruikersnummer in. "))
+    ingevoerdeNummer = (input("Voer uw gebruikersnummer in. ")
     return ingevoerdeNummer
 def nummerCheck(nummer):
     "kijkt of het nummer bestaat in gebruikers.csv"
