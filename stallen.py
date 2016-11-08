@@ -6,6 +6,13 @@ def nummerInvoeren():
     ingevoerdeNummer = int(input("Voer uw gebruikersnummer in. "))
     return ingevoerdeNummer
 
+def nummerCheck(nummer):
+    "kijkt of het nummer bestaat in gebruikers.csv"
+    reader = csv.DictReader(open('gebruikers.csv', 'r'))
+    dict_list = []
+    for line in reader:
+        
+
 def naamInvoeren():
     #pakt de ingevoerde naam van de gebruiker
     ingevoerdeNaam = input("Voer uw voor en achternaam in. ")
