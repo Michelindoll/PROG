@@ -24,6 +24,11 @@ def registreren():
         gebruikersGegevens.write(emailInput + '\n')
         gebruikersGegevens.write(bankPinNummerinput + '\n')
         gebruikersGegevens.write(fietsModelInput + '\n')
+        gebruikersGegevens.write(id_Generator())
         break
+
+
+
+
 registreren()
 
