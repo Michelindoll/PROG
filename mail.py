@@ -16,12 +16,12 @@ def mail(naar, van, wachtwoord):
 
     #Zet de gegevens op de juiste plaats. De tekst die hij uiteindelijk mee verstuurd.
     header = 'To:' + to + '\n' + 'From: ' + live_user + '\n' + 'Subject:Test \n'
-    print (header)
+    print(header)
     msg = header + '\n Dit is een test bericht! \n\n'
 
     #verstuurd de mail en als het lukt, print done! uit. Het sluit daarna de server af.
     smtpserver.sendmail(live_user, to, msg)
-    print ('done!')
+    print('done!')
     smtpserver.quit()
 
 #Vraagt naar de nodige gegevens en stuurd vervolgens de standaard email.
