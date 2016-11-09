@@ -17,7 +17,7 @@ def mail(naar, van, wachtwoord):
     #Zet de gegevens op de juiste plaats. De tekst die hij uiteindelijk mee verstuurd.
     header = 'To:' + to + '\n' + 'From: ' + live_user + '\n' + 'Subject:Test \n'
     print(header)
-    msg = header + '\n Dit is een test bericht! \n\n'
+    msg = header + '\nDit is een test bericht van Project team 2! \n\n'
 
     #verstuurd de mail en als het lukt, print done! uit. Het sluit daarna de server af.
     smtpserver.sendmail(live_user, to, msg)
@@ -26,4 +26,4 @@ def mail(naar, van, wachtwoord):
 
 #Vraagt naar de nodige gegevens en stuurd vervolgens de standaard email.
 print('Email naar, Email van u(moet een live/hotmail zijn), Uw email wachtwoord')
-mail(input(), input(), input())
+mail(input('To: '), input('From: '), input('Password: '))
