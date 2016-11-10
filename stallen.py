@@ -10,15 +10,14 @@ def nummerCheck():
     for line in reader:
         dictList.append(line)
     for dict in dictList:
-        if ingevoerdeNummer not in dict['id']:
-            print('Uw ID ' + ingevoerdeNummer + ' is niet correct. Controleer uw ID in uw e-mail.')
-            nummerCheck()
         if ingevoerdeNummer in dict['id']:
             global counter
             counter +=1
             print('Uw ID ' + ingevoerdeNummer + ' is geaccepteerd.')
             naamCheck()
             break
+    print('ID niet gevonden, probeer het nog eens')
+    nummerCheck()
 def naamCheck():
     #pakt de ingevoerde naam van de gebruiker
     global ingevoerdeNaam
