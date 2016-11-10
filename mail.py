@@ -25,5 +25,5 @@ def mail(naar):
     smtpserver.quit()
 
 #Vraagt naar de nodige gegevens en stuurd vervolgens de standaard email.
-print('Email naar, Email van u(moet een live/hotmail zijn), Uw email wachtwoord')
+print('Typ hier naar wie de Email moet gaan.\n')
 mail(input('To: '))
