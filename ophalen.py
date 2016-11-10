@@ -12,6 +12,12 @@ def nummerCheck(nummer):
     reader = csv.DictReader(open('fietsen.csv', 'r'))
     dict_list = []
     for line in reader:
+        dict_list.append(line)
+    for dict in dict_list:
+        if nummer in dict['id']:
+            print('ID: ' + dict['id']+' klopt!' )
+        else:
+            print('ID klopt niet')
+# check of de fiets bij de gebruiker hoort
 
-# check of de fiets bij de gebruiker  hoort
-def naamInvoeren == nummerCheck
+nummerCheck(input(´nummer: ´))
