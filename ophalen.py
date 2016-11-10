@@ -10,8 +10,6 @@ def naamInvoeren():
 def nummerCheck(nummer):
     "kijkt of het nummer bestaat in fietsen.csv"
     reader = csv.DictReader(open('fietsen.csv', 'r'))
-    #dict_list = []
-    #for line in reader:
     dict_list = []
     for line in reader:
         dict_list.append(line)
@@ -20,7 +18,6 @@ def nummerCheck(nummer):
             print('ID: ' + dict['id']+' klopt!' )
         else:
             print('ID klopt niet')
+# check of de fiets bij de gebruiker hoort
 
-# check of de fiets bij de gebruiker  hoort
-
-nummerCheck(input('nummer: '))
+nummerCheck(input(´nummer: ´))
