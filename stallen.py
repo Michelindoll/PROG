@@ -34,3 +34,9 @@ def schrijftNaarGestaldeFietsen():
     append_Fietsen = open('fietsen.csv', 'a')
     append_Fietsen.write(nummerCheck() + ', ' + datumEnTijd() + ', ' + naamCheck())
 schrijftNaarGestaldeFietsen()
+
+# Code van Les 7
+def schrijfFile(kluisnummer,code):
+    with open('kluizen.csv', 'a', newline='') as kluisFile:
+        writer = csv.writer(kluisFile)
+        writer.writerow((kluisnummer, int(code)))
