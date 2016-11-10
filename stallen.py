@@ -1,12 +1,9 @@
 import time
 import csv
-
 def nummerCheck():
     #pakt het ingevoerde nummer van de gebruiker
     global ingevoerdeNummer
-    ingevoerdeNummer = (input('Voer uw gebruikersnummer in. '))
-    global counter
-    counter = 0
+    ingevoerdeNummer = (input('Voer uw ID in. '))
     #kijkt of het nummer bestaat in gebruikers.csv
     reader = csv.DictReader(open('gebruikers.csv', 'r'))
     dictList = []
@@ -14,10 +11,13 @@ def nummerCheck():
         dictList.append(line)
     for dict in dictList:
         if ingevoerdeNummer in dict['id']:
+            global counter
             counter +=1
-            return('Uw ID ' + ingevoerdeNummer + ' is geaccepteerd.')
+            print('Uw ID ' + ingevoerdeNummer + ' is geaccepteerd.')
+            naamCheck()
         else:
-            return('Uw ID ' + ingevoerdeNummer + ' is niet correct. Controleer uw ID in uw e-mail.')
+            print('Uw ID ' + ingevoerdeNummer + ' is niet correct. Controleer uw ID in uw e-mail.')
+            nummerCheck()
 def naamCheck():
     #pakt de ingevoerde naam van de gebruiker
     global ingevoerdeNaam
@@ -29,18 +29,26 @@ def naamCheck():
         dict_list.append(line)
     for dict in dict_list:
         if ingevoerdeNaam in dict['naam']:
+            global counter
             counter +=1
-            return('Uw naam ' + ingevoerdeNaam + ' is geaccepteerd.')
+            print('Uw naam ' + ingevoerdeNaam + ' is geaccepteerd.')
+            schrijfFile(ingevoerdeNummer, datumEnTijd(),ingevoerdeNaam)
         else:
-            return('Uw naam ' + ingevoerdeNaam + ' is niet correct. Controleer uw naam in uw e-mail.')
+            print('Uw naam ' + ingevoerdeNaam + ' is niet correct. Controleer uw naam in uw e-mail.')
+            naamCheck()
 def datumEnTijd():
     #geeft huidige datum en tijd
-    huidigeDatumEnTijd = time.time()
+    huidigeDatumEnTijd = int(time.time())
     return huidigeDatumEnTijd
-
 def schrijfFile(nummer, datum, naam):
     with open('fietsen.csv', 'a', newline='') as fietsFile:
-        writer = csv.writer(fietsFile)
-        writer.writerow((nummer, datum, naam))
+        global counter
+        if counter != 2:
+            print('Uw ID of uw Naam is incorrect.')
+            nummerCheck()
+        else:
+            writer = csv.writer(fietsFile)
+            writer.writerow((nummer, datum, naam))
+counter = 0
+nummerCheck()
 
-schrijfFile('0003','12345678','Michel Wijkstra')
