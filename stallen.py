@@ -2,7 +2,7 @@ import time
 import csv
 def nummerCheck():
     #pakt het ingevoerde nummer van de gebruiker
-    ingevoerdeNummer = (input("Voer uw gebruikersnummer in. "))
+    ingevoerdeNummer = (input('Voer uw gebruikersnummer in. '))
     #kijkt of het nummer bestaat in gebruikers.csv
     reader = csv.DictReader(open('gebruikers.csv', 'r'))
     dictList = []
@@ -10,10 +10,9 @@ def nummerCheck():
         dictList.append(line)
     for dict in dictList:
         if ingevoerdeNummer in dict['id']:
-            print('Uw ID ' + dict['id'] + ' is geaccepteerd.')
-            return ingevoerdeNummer
+            return('Uw ID ' + ingevoerdeNummer + ' is geaccepteerd.')
         else:
-            print('Uw ID ' + dict['id'] + ' is niet correct. Controleer uw ID in uw e-mail.')
+            return('Uw ID ' + ingevoerdeNummer + ' is niet correct. Controleer uw ID in uw e-mail.')
 def naamCheck():
     #pakt de ingevoerde naam van de gebruiker
     ingevoerdeNaam = input("Voer uw voor en achternaam in. ")
@@ -24,10 +23,9 @@ def naamCheck():
         dict_list.append(line)
     for dict in dict_list:
         if ingevoerdeNaam in dict['naam']:
-            print('Uw naam ' + dict['id'] + ' is geaccepteerd.')
-            return ingevoerdeNaam
+            return('Uw naam ' + ingevoerdeNaam + ' is geaccepteerd.')
         else:
-            print('Uw naam ' + dict['id'] + ' is niet correct. Controleer uw naam in uw e-mail.')
+            return('Uw naam ' + ingevoerdeNaam + ' is niet correct. Controleer uw naam in uw e-mail.')
 def datumEnTijd():
     #geeft huidige datum en tijd
     huidigeDatumEnTijd = int(time.time())
@@ -35,4 +33,12 @@ def datumEnTijd():
 def schrijftNaarGestaldeFietsen():
     append_Fietsen = open('fietsen.csv', 'a')
     append_Fietsen.write(nummerCheck() + ', ' + datumEnTijd() + ', ' + naamCheck())
+#schrijftNaarGestaldeFietsen()
 
+# Code van Les 7
+def schrijfFile(nummer, datum, naam):
+    with open('fietsen.csv', 'a', newline='') as kluisFile:
+        writer = csv.writer(kluisFile)
+        writer.writerow((nummer, datum, naam))
+
+schrijfFile('0003','12345678','Michel Wijkstra')

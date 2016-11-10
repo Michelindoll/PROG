@@ -3,6 +3,7 @@ from info import aantalPlaatsenBeschikbaar, modelFiets
 from beheerderspaneel import beheerdersPaneel, inloggenBeheer
 
 def showInterface():
+    """Begint de interface loop, vanuit hier worden alle andere functie calls uitgevoerd."""
     while True:
         print('Welkom bij de NS Fietsenstalling van NS')
         print('Kies 1 om te registreren')
