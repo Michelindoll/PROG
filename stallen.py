@@ -28,12 +28,13 @@ def naamCheck():
             return('Uw naam ' + ingevoerdeNaam + ' is niet correct. Controleer uw naam in uw e-mail.')
 def datumEnTijd():
     #geeft huidige datum en tijd
-    huidigeDatumEnTijd = int(time.time())
-    return huidigeDatumEnTijd
-def schrijftNaarGestaldeFietsen():
-    append_Fietsen = open('fietsen.csv', 'a')
-    append_Fietsen.write(nummerCheck() + ', ' + datumEnTijd() + ', ' + naamCheck())
-schrijftNaarGestaldeFietsen()
+    tijdStip = int(time.time())
+    return tijdStip
+def schrijftNaarGestaldeFietsen(ingevoerdeNummer, ingevoerdeNaam, tijdStip):
+    with open('fietsen.csv', 'a') as fietsFile:
+        writer = csv.writer(fietsFile)
+        writer.writerow(int((ingevoerdeNummer), int(tijdStip), ingevoerdeNaam))
+schrijftNaarGestaldeFietsen(nummerCheck(), datumEnTijd(), str(naamCheck()))
 
 # Code van Les 7
 def schrijfFile(kluisnummer,code):
