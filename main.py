@@ -10,7 +10,7 @@ def showInterface():
         print('Kies 3 om uw fiets op te halen')
         print('Kies 4 om informatie op te vragen')
         invoer = int(input('Maak uw keuze: '))
-        if invoer == :
+        if invoer == 0:
             print('')
             inloggenBeheer()
         if invoer == 1:
@@ -42,6 +42,7 @@ def showInterface():
                     print('Fietsenstalling afgebrand? - Eigen schuld')
                     print('thermonucleaire oorlog uitgebroken? - Eigen schuld')
                     print('')
+                    del invoer #Zorgt dat er niet naar het blok hieronder gesprongen wordt.
             if invoer == 2:
                 print('')
                 print('Voer uw naam in om uw persoonlijke gegevens op te vragen.')
