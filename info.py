@@ -13,14 +13,17 @@ def aantalPlaatsenBeschikbaar():
 
 def modelFiets(naam):
     """Deze functie maakt per gebruiker een dictionary en vergelijkt het naam veld met de invoer. Als er een overeenkomst is wordt de regel afgedrukt."""
-    #Todo: Error handling bij geen output
     #Todo: Error handling bij meer dan 1 gebruiker met dezelfde naam
     #Todo: Return ipv print?
     reader = csv.DictReader(open('gebruikers.csv', 'r'))
     dict_list = []
+    counter = 0
     for line in reader:
         dict_list.append(line)
     for dict in dict_list:
         if naam in dict['naam']:
             print('Gebruiker ' + dict['naam']+' heeft een '+dict['model'])
+            counter +=1
+    if counter == 0:
+        print('Gebruiker niet gevonden!')
 
