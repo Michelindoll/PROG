@@ -42,6 +42,7 @@ def showInterface():
                     print('Fietsenstalling afgebrand? - Eigen schuld')
                     print('thermonucleaire oorlog uitgebroken? - Eigen schuld')
                     print('')
+                    del invoer #Zorgt dat er niet naar het blok hieronder gesprongen wordt.
             if invoer == 2:
                 print('')
                 print('Voer uw naam in om uw persoonlijke gegevens op te vragen.')
