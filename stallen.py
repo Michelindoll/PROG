@@ -15,7 +15,7 @@ def nummerCheck():
             counter +=1
             print('Uw ID ' + ingevoerdeNummer + ' is geaccepteerd.')
             naamCheck()
-        else:
+        if ingevoerdeNummer not in dict['id']:
             print('Uw ID ' + ingevoerdeNummer + ' is niet correct. Controleer uw ID in uw e-mail.')
             nummerCheck()
 def naamCheck():
@@ -33,7 +33,7 @@ def naamCheck():
             counter +=1
             print('Uw naam ' + ingevoerdeNaam + ' is geaccepteerd.')
             schrijfFile(ingevoerdeNummer, datumEnTijd(),ingevoerdeNaam)
-        else:
+        if ingevoerdeNaam not in dict['naam']:
             print('Uw naam ' + ingevoerdeNaam + ' is niet correct. Controleer uw naam in uw e-mail.')
             naamCheck()
 def datumEnTijd():
@@ -43,12 +43,12 @@ def datumEnTijd():
 def schrijfFile(nummer, datum, naam):
     with open('fietsen.csv', 'a', newline='') as fietsFile:
         global counter
+        if counter == 2:
+            writer = csv.writer(fietsFile)
+            writer.writerow((nummer, datum, naam))
         if counter != 2:
             print('Uw ID of uw Naam is incorrect.')
             nummerCheck()
-        else:
-            writer = csv.writer(fietsFile)
-            writer.writerow((nummer, datum, naam))
+
 counter = 0
 nummerCheck()
-
