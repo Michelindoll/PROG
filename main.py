@@ -1,5 +1,6 @@
 # In dit bestand komt enkel de interface, geen functies in plakken
 from info import aantalPlaatsenBeschikbaar, modelFiets
+from beheerderspaneel import beheerdersPaneel, inloggenBeheer
 
 def showInterface():
     while True:
@@ -10,7 +11,8 @@ def showInterface():
         print('Kies 4 om informatie op te vragen')
         invoer = int(input('Maak uw keuze: '))
         if invoer == 0:
-            print('functie call')
+            print('')
+            inloggenBeheer()
         if invoer == 1:
             print('functie call')
         if invoer == 2:
@@ -46,7 +48,6 @@ def showInterface():
                 invoer = input('Naam: ')
                 modelFiets(invoer)
                 print('')
-
 
 showInterface()
 
