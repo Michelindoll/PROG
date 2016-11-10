@@ -1,5 +1,6 @@
 import time
 import csv
+
 def nummerCheck():
     #pakt het ingevoerde nummer van de gebruiker
     global ingevoerdeNummer
@@ -36,6 +37,7 @@ def datumEnTijd():
     #geeft huidige datum en tijd
     huidigeDatumEnTijd = time.time()
     return huidigeDatumEnTijd
+
 def schrijfFile(nummer, datum, naam):
     with open('fietsen.csv', 'a', newline='') as fietsFile:
         writer = csv.writer(fietsFile)

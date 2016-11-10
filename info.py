@@ -31,6 +31,12 @@ def modelFiets(naam):
             print('Gebruiker ' + dict['naam']+' heeft een '+dict['model'])
     if counter > 1:
         print('Er zijn meerde gebruikers gevonden met de naam '+naam)
+        invoer = input('Voer uw code in om de gebruiker te verifieren: ')
+        for dict in dict_list2:
+            if invoer == dict['id']:
+                print('Gebruiker ' + dict['naam']+' heeft een '+dict['model'])
+
+
 
 modelFiets('Donald Trump')
 
