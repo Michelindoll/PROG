@@ -15,15 +15,25 @@ def modelFiets(naam):
     #Todo: Error handling bij meer dan 1 gebruiker met dezelfde naam
     reader = csv.DictReader(open('gebruikers.csv', 'r'))
     dict_list = []
+    dict_list2 = []
     counter = 0
     for line in reader:
         dict_list.append(line)
     for dict in dict_list:
         if naam in dict['naam']:
-            print('Gebruiker ' + dict['naam']+' heeft een '+dict['model'])
+            #print('Gebruiker ' + dict['naam']+' heeft een '+dict['model'])
             counter +=1
+            dict_list2.append(dict)
     if counter == 0:
         print('Gebruiker niet gevonden!')
+    if counter == 1:
+        for dict in dict_list2:
+            print('Gebruiker ' + dict['naam']+' heeft een '+dict['model'])
+    if counter > 1:
+        print('Er zijn meerde gebruikers gevonden met de naam '+naam)
+
+modelFiets('Donald Trump')
+
 
 
 
