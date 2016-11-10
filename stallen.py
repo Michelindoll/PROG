@@ -30,7 +30,6 @@ def naamCheck():
 def datumEnTijd():
     #geeft huidige datum en tijd
     huidigeDatumEnTijd = int(time.time())
+    infile = open('fietsen.csv', 'a')
+    infile.append(huidigeDatumEnTijd)
     return huidigeDatumEnTijd
-print(datumEnTijd())
-nummerCheck()
-naamCheck()
