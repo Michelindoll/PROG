@@ -49,4 +49,4 @@ def beheerdersPaneel():
                 beheerdersPaneel()
             return
 
-inloggenBeheer()
+

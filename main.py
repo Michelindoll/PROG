@@ -10,7 +10,7 @@ def showInterface():
         print('Kies 3 om uw fiets op te halen')
         print('Kies 4 om informatie op te vragen')
         invoer = int(input('Maak uw keuze: '))
-        if invoer == :
+        if invoer == 0:
             print('')
             inloggenBeheer()
         if invoer == 1:
