@@ -1,9 +1,16 @@
 import smtplib
+import csv
 
-def mail(naar):
+def mail():
+
+    #Opent het bestand gebruikers om de benodigde gegevens eruit te halen
+    reader = csv.DictReader(open('gebruikers.csv', 'r'))
+    dict_list = []
+    for line in reader:
+        dict_list.append(line)
 
     #Naar en van wie je de email stuurt.
-    to = naar
+    to = dict_list['email']
     live_user = 'schoolhu2016@hotmail.com'
     live_pwd = 'ProjectTeam2'
 
@@ -15,9 +22,9 @@ def mail(naar):
     smtpserver.login(live_user, live_pwd)
 
     #Zet de gegevens op de juiste plaats. De tekst die hij uiteindelijk mee verstuurd.
-    header = 'To:' + to + '\n' + 'From: ' + live_user + '\n' + 'Subject:Test \n'
+    header = 'To:' + to + '\n' + 'From: ' + live_user + '\n' + 'Subject:Registratie gegevens \n'
     print(header)
-    msg = header + '\nDit is een test bericht van Project team 2! \n\n'
+    msg = header + '\nHierbij uw gegevens\n\nUw id: ' + dict_list['id'] + '\nUw gebruikersnaam: ' + dict_list['naam'] + '\nUw model: ' + dict_list['model'] + '\n\n Met vriendelijke groet,\n ProjectTeam2'
 
     #verstuurd de mail en als het lukt, print done! uit. Het sluit daarna de server af.
     smtpserver.sendmail(live_user, to, msg)
@@ -25,5 +32,5 @@ def mail(naar):
     smtpserver.quit()
 
 #Vraagt naar de nodige gegevens en stuurd vervolgens de standaard email.
-print('Typ hier naar wie de Email moet gaan.\n')
-mail(input('To: '))
+#print('Typ hier naar wie de Email moet gaan.\n')
+#mail(input('To: '))
