@@ -27,5 +27,4 @@ def schrijfFile(ID, naam, email, fietsModel):
         mail = open('mail.py', 'r')
         mail.mail()
 
-registreren()
 
