@@ -13,7 +13,7 @@ def mail(ID, naam, email, modelFiets):
         smtpserver = smtplib.SMTP("smtp.live.com",587)
         smtpserver.ehlo()
         smtpserver.starttls()
-        smtpserver.ehlo() # extra characters to permit edit
+        smtpserver.ehlo()
         smtpserver.login(live_user, live_pwd)
 
         #Zet de gegevens op de juiste plaats. De tekst die hij uiteindelijk mee verstuurd.
@@ -25,6 +25,7 @@ def mail(ID, naam, email, modelFiets):
         print('De email is succesvol verstuurd!\n')
         smtpserver.quit()
 
+    #Als de email niet verstuurd kan worden door een error, verwijderd hij de registratie en word de main weergegeven
     except:
         with open('gebruikers.csv', 'r') as csvfile:
             gebruikers = csvfile.readlines()
