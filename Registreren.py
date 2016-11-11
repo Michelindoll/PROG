@@ -27,5 +27,4 @@ def schrijfFile(ID, naam, email, fietsModel):
         writer.writerow((ID, naam, email, fietsModel))
     mail()
 
-registreren()
 
