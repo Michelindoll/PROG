@@ -14,7 +14,7 @@ def nummerNaamCheck():
     for line in reader:
         dictList.append(line)
     for dict in dictList:
-        if ingevoerdeNummer or ingevoerdeNaam == 'menu':
+        if ingevoerdeNummer == 'menu' or ingevoerdeNaam == 'menu':
             import main.py
             break
         if ingevoerdeNummer in dict['id'] and ingevoerdeNaam in dict['naam']:
@@ -44,4 +44,3 @@ def schrijfFile(nummer, datum, naam):
             writer = csv.writer(fietsFile)
             writer.writerow((nummer, datum, naam))
 counter = 0
-nummerNaamCheck()
