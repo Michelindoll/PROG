@@ -1,26 +1,21 @@
-import time
-import datetime
 import csv
 
-def naamInvoeren():
-    #pakt de ingevoerde naam van de gebruiker
-    ingevoerdeNaam = input("Voer uw voor en achternaam in. ")
-    return ingevoerdeNaam
-
-def nummerCheck(nummer):
+def fietsOphalen():
     "kijkt of het nummer bestaat in fietsen.csv"
+    nummer = input('Voer uw ID in: ')
+    naam = input('Voer uw voor en achternaam in: ')
     reader = csv.DictReader(open('fietsen.csv', 'r'))
     dict_list = []
     for line in reader:
         dict_list.append(line)
     for dict in dict_list:
-        if nummer in dict['id']:
-            print('ID: ' + dict['id']+' klopt!' )
-        else:
-            print('ID klopt niet')
+        if nummer in dict['id'] and naam in dict['naam']:
+            verwijderFiets(nummer)
+            print('Fiets vrijgegeven!')
+
 # check of de fiets bij de gebruiker hoort
 # print ga fietsen en vervolgens verwijderen uit gestaalde fiets csv.
-nummerCheck(input('nummer: '))
+
 
 def verwijderFiets(id):
     """Leest fietsen.csv, zoekt de regel waar het ID overeenkomt met het variabel id (string) en verwijderd deze. Daarna wordt de het CSV bestand weer opgeslagen."""
@@ -31,3 +26,4 @@ def verwijderFiets(id):
                 fietsen.remove(row)
     with open('fietsen.csv', 'w') as csvfile:
         csvfile.writelines(fietsen)
+
