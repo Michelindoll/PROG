@@ -16,7 +16,7 @@ def registreren():
         naam = input('Uw voor en achternaam: ')
         email = input('Uw email-adres: ')
         modelFiets = input('Het model van uw fiets: ')
-        print('Registratie gelukt!')
+        print('Registratie gelukt!\n')
         schrijfFile(id_Generator(),naam, email, modelFiets)
         break
 
