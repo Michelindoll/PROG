@@ -1,11 +1,13 @@
 # In dit bestand komt enkel de interface, geen functies in plakken
 from info import aantalPlaatsenBeschikbaar, modelFiets
 from beheerderspaneel import beheerdersPaneel, inloggenBeheer
+from Registreren import registreren
+from stallen import nummerNaamCheck
 
 def showInterface():
     """Begint de interface loop, vanuit hier worden alle andere functie calls uitgevoerd."""
     while True:
-        print('Welkom bij de NS Fietsenstalling van NS')
+        print('Welkom bij de NS Fietsenstalling')
         print('Kies 1 om te registreren')
         print('Kies 2 om uw fiets te stallen')
         print('Kies 3 om uw fiets op te halen')
@@ -15,9 +17,11 @@ def showInterface():
             print('')
             inloggenBeheer()
         if invoer == 1:
-            print('functie call')
+            print('')
+            registreren()
         if invoer == 2:
-            print('functie call')
+            print('')
+            nummerNaamCheck()
         if invoer == 3:
             print('functie call')
         if invoer == 4:

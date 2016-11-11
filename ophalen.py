@@ -19,11 +19,11 @@ def nummerCheck(nummer):
         else:
             print('ID klopt niet')
 # check of de fiets bij de gebruiker hoort
-
+# print ga fietsen en vervolgens verwijderen uit gestaalde fiets csv.
 nummerCheck(input('nummer: '))
 
 def verwijderFiets(id):
-    """Leest fietsen.csv, zoekt de regel waar het ID overeenkomt met het variabel id (sting) en verwijderd deze. Daarna wordt de het CSV bestand weer opgeslagen."""
+    """Leest fietsen.csv, zoekt de regel waar het ID overeenkomt met het variabel id (string) en verwijderd deze. Daarna wordt de het CSV bestand weer opgeslagen."""
     with open('fietsen.csv', 'r') as csvfile:
         fietsen = csvfile.readlines()
         for row in fietsen:
