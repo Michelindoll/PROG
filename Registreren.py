@@ -2,7 +2,8 @@ import random
 import string
 import csv
 from mail import mail
-
+"""Er wordt een code gemaakt door een string van ascii characters en een string van cijfers te importen deze wordt in een random volgorde aan alkaar geplakt."""
+"""Er wordt niet gecontroleerd of het ID uniek is omdat de kans op twee dezelfde ID's nihiel is"""
 def id_Generator(size=6, chars=string.ascii_uppercase + string.digits):
     return ''.join(random.choice(chars) for _ in range(size))
 
@@ -17,11 +18,11 @@ def registreren():
         schrijfFile(id_Generator(),naam, email, modelFiets)
         break
 
-
+""" Gebruikers input wordt genomen en wordt geschreven in het gebruikers csv file"""
 def schrijfFile(ID, naam, email, fietsModel):
     with open('gebruikers.csv', 'a', newline='') as gebruikersGegevens:
         writer = csv.writer(gebruikersGegevens)
         writer.writerow((ID, naam, email, fietsModel))
     mail(ID, naam, email, fietsModel)
-
+"""verwijst naar de mail functie"""
 
