@@ -24,8 +24,8 @@ def schrijfFile(ID, naam, email, fietsModel):
     with open('gebruikers.csv', 'a', newline='') as gebruikersGegevens:
         writer = csv.writer(gebruikersGegevens)
         writer.writerow((ID, naam, email, fietsModel))
-        mail = open('mail.py', 'r')
-        mail.mail()
+    mail = open('mail.py', 'r')
+    mail.mail()
 
 registreren()
 
