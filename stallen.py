@@ -1,7 +1,8 @@
 import time
 import csv
 def nummerNaamCheck():
-    #pakt het ingevoerde nummer van de gebruiker
+    """De functie nummerNaamCheck() laat de gebruiker zijn ID en naam invoeren, waarna wordt gekeken
+    of deze aanwezig zijn bij de geregistreerde gebruikers."""
     global ingevoerdeNummer
     ingevoerdeNummer = (input('Voer uw ID in. '))
     global ingevoerdeNaam
@@ -23,10 +24,13 @@ def nummerNaamCheck():
         print('Uw ID of uw Naam is niet correct.')
         nummerNaamCheck()
 def datumEnTijd():
-    #geeft huidige datum en tijd
+    """De functie datumEnTijd() genereert een nummer wat gelijk staat aan het aanal seconden sinds
+    de epoch."""
     huidigeDatumEnTijd = int(time.time())
     return huidigeDatumEnTijd
 def schrijfFile(nummer, datum, naam):
+    """De functie schrijfFile opent de file fietsen.csv en kijkt naar de counter. Als deze 1 is,
+    wordt er het ID, de Timestamp en de naam opgeslagen. Dit betekend dat er een fiets gestald is."""
     with open('fietsen.csv', 'a', newline='') as fietsFile:
         global counter
         if counter == 1:
