@@ -25,6 +25,6 @@ def schrijfFile(ID, naam, email, fietsModel):
     with open('gebruikers.csv', 'a', newline='') as gebruikersGegevens:
         writer = csv.writer(gebruikersGegevens)
         writer.writerow((ID, naam, email, fietsModel))
-    mail()
+    mail(ID, naam, email, fietsModel)
 
 

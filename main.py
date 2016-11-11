@@ -7,7 +7,7 @@ from stallen import nummerNaamCheck
 def showInterface():
     """Begint de interface loop, vanuit hier worden alle andere functie calls uitgevoerd."""
     while True:
-        print('Welkom bij de NS Fietsenstalling van NS')
+        print('Welkom bij de NS Fietsenstalling')
         print('Kies 1 om te registreren')
         print('Kies 2 om uw fiets te stallen')
         print('Kies 3 om uw fiets op te halen')
