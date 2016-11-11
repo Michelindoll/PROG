@@ -1,6 +1,7 @@
 import random
 import string
 import csv
+from mail import mail
 
 def id_Generator(size=6, chars=string.ascii_uppercase + string.digits):
     return ''.join(random.choice(chars) for _ in range(size))
@@ -24,8 +25,7 @@ def schrijfFile(ID, naam, email, fietsModel):
     with open('gebruikers.csv', 'a', newline='') as gebruikersGegevens:
         writer = csv.writer(gebruikersGegevens)
         writer.writerow((ID, naam, email, fietsModel))
-    mail = open('mail.py', 'r')
-    mail.mail()
+    mail()
 
 registreren()
 
