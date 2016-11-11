@@ -1,5 +1,5 @@
 import smtplib
-import csv
+
 
 def mail(ID, naam, email, modelFiets):
 
@@ -17,7 +17,6 @@ def mail(ID, naam, email, modelFiets):
 
     #Zet de gegevens op de juiste plaats. De tekst die hij uiteindelijk mee verstuurd.
     header = 'To: ' + to + '\n' + 'From: ' + live_user + '\n' + 'Subject: Registratie gegevens \n'
-    #print(header)
     msg = header + '\nHierbij uw gegevens,\n\nUw id: ' + str(ID) + '\nUw gebruikersnaam: ' + str(naam) + '\nUw model: ' + str(modelFiets) + '\n\n\n Met vriendelijke groet,\n ProjectTeam 2'
 
     #verstuurd de mail en als het lukt, print done! uit. Het sluit daarna de server af.
