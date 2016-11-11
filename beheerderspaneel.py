@@ -48,7 +48,7 @@ def beheerdersPaneel():
 
             # bij het invoeren van 2 ga je weer terug naar het hoofdmenu
             if invoer == 2:
-                print('u bent terug bij het hoofdmenu')
+                print('')
                 import main.py
 
             # geeft een melding dat je alleen uit keuze 1 en 2 kunt kiezen. en stuurt je dan weer terug naar het beheerderspaneel
@@ -58,4 +58,4 @@ def beheerdersPaneel():
             return
 
 
-inloggenBeheer()
+
