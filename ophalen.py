@@ -10,8 +10,6 @@ def naamInvoeren():
 def nummerCheck(nummer):
     "kijkt of het nummer bestaat in fietsen.csv"
     reader = csv.DictReader(open('fietsen.csv', 'r'))
-    #dict_list = []
-    #for line in reader:
     dict_list = []
     for line in reader:
         dict_list.append(line)
@@ -20,7 +18,16 @@ def nummerCheck(nummer):
             print('ID: ' + dict['id']+' klopt!' )
         else:
             print('ID klopt niet')
-
-# check of de fiets bij de gebruiker  hoort
-
+# check of de fiets bij de gebruiker hoort
+# print ga fietsen en vervolgens verwijderen uit gestaalde fiets csv.
 nummerCheck(input('nummer: '))
+
+def verwijderFiets(id):
+    """Leest fietsen.csv, zoekt de regel waar het ID overeenkomt met het variabel id (string) en verwijderd deze. Daarna wordt de het CSV bestand weer opgeslagen."""
+    with open('fietsen.csv', 'r') as csvfile:
+        fietsen = csvfile.readlines()
+        for row in fietsen:
+            if id in row:
+                fietsen.remove(row)
+    with open('fietsen.csv', 'w') as csvfile:
+        csvfile.writelines(fietsen)
