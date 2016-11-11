@@ -51,7 +51,7 @@ def beheerdersPaneel():
                 print('u bent terug bij het hoofdmenu')
                 import main.py
 
-            # geeft een melding dat je alleen uit keuze 1 en 2 kan kiezen. en stuurt je dan weer terug naar het beheerderspaneel
+            # geeft een melding dat je alleen uit keuze 1 en 2 kunt kiezen. en stuurt je dan weer terug naar het beheerderspaneel
             if invoer != 1 and 2:
                 print('kies uit optie 1 of 2')
                 beheerdersPaneel()
