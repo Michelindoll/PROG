@@ -2,6 +2,7 @@ import smtplib
 
 
 def mail(ID, naam, email, modelFiets):
+    """Mailt de code naar de eigenaar van de fiets, de code komt niet op het scherm te staan om veiligheid te garanderen."""
     try:
         #Naar en van wie je de email stuurt.
         to = email
