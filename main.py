@@ -2,6 +2,7 @@
 from info import aantalPlaatsenBeschikbaar, modelFiets
 from beheerderspaneel import beheerdersPaneel, inloggenBeheer
 from Registreren import registreren
+from stallen import nummerNaamCheck
 
 def showInterface():
     """Begint de interface loop, vanuit hier worden alle andere functie calls uitgevoerd."""
@@ -19,7 +20,8 @@ def showInterface():
             print('')
             registreren()
         if invoer == 2:
-            print('functie call')
+            print('')
+            nummerNaamCheck()
         if invoer == 3:
             print('functie call')
         if invoer == 4:

@@ -37,4 +37,4 @@ def schrijfFile(nummer, datum, naam):
             writer = csv.writer(fietsFile)
             writer.writerow((nummer, datum, naam))
 counter = 0
-nummerNaamCheck()
+
