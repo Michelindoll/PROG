@@ -2,8 +2,7 @@
 import csv
 
 def inloggenBeheer():
-
-    # zorgt ervoor dat je in moet loggen om bij het beheerderspaneel te komen via gebruikersnaam en wachtwoord
+    """zorgt ervoor dat je in moet loggen om bij het beheerderspaneel te komen via gebruikersnaam en wachtwoord"""
     username = 'admin'
     password = 'nstrein'
     while True:
@@ -27,7 +26,7 @@ def inloggenBeheer():
 
 
 def beheerdersPaneel():
-    # in het beheerderspaneel kan je de gebruikers gegevens inlezen.
+    """in het beheerderspaneel kan je de gebruikers gegevens inlezen, of terug naar het hoofdmenu via een keuzemenu"""
     while True:
             print('Welkom bij het beheerderspaneel')
             print('Kies 1 om alle gegevens in te zien')
@@ -42,7 +41,7 @@ def beheerdersPaneel():
                 with open('gebruikers.csv') as csvfile:
                     gebruikersgegevens = csv.reader(csvfile)
                     for row in gebruikersgegevens:
-                        print(''.join(row))
+                        print(', '.join(row))
                     print('')
                     beheerdersPaneel()
 
