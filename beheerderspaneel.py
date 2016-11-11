@@ -48,7 +48,7 @@ def beheerdersPaneel():
 
             # bij het invoeren van 2 ga je weer terug naar het hoofdmenu
             if invoer == 2:
-                print('ga terug naar het hoofdmenu')
+                print('u bent terug bij het hoofdmenu')
                 import main.py
 
             # geeft een melding dat je alleen uit keuze 1 en 2 kan kiezen. en stuurt je dan weer terug naar het beheerderspaneel
