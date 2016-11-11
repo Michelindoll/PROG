@@ -9,10 +9,7 @@ def id_Generator(size=6, chars=string.ascii_uppercase + string.digits):
 def registreren():
 
     while True:
-        print('Welkom Bij Goat Sec fiets stallingen!')
-        print('Om te registreren bij Goat Sec hebben wij enkele persoonlijke gegevens nodig.')
-        print('Uw persoonlijke gegevens worden natuurlijk veilig opgeslagen.')
-        print('Uw persoonlijke gegevens worden natuurlijk niet misbruikt door Goat Sec Inc.')
+        print('Om te registreren hebben wij enkele persoonlijke gegevens nodig.')
         naam = input('Uw voor en achternaam: ')
         email = input('Uw email-adres: ')
         modelFiets = input('Het model van uw fiets: ')
