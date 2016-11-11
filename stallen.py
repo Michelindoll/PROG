@@ -22,7 +22,7 @@ def nummerNaamCheck():
             counter +=1
             print('Uw ID ' + ingevoerdeNummer + ' en uw naam ' + ingevoerdeNaam + ' is geaccepteerd.\n'
                   'Bedankt voor het gebruik maken van de NS fietsenstalling.\n'
-                  'U gaat nu terug naar het hoofdmenu.')
+                  'U gaat nu terug naar het hoofdmenu.\n')
         if counter == 1:
             schrijfFile(ingevoerdeNummer, datumEnTijd(), ingevoerdeNaam)
             time.sleep(5)

@@ -4,6 +4,7 @@ from beheerderspaneel import inloggenBeheer
 from Registreren import registreren
 from stallen import nummerNaamCheck
 from ophalen import fietsOphalen
+import time
 
 def showInterface():
     """Begint de interface loop, vanuit hier worden alle andere functie calls uitgevoerd."""
@@ -47,9 +48,10 @@ def showInterface():
                     print('Fiets weg? - Eigen schuld')
                     print('Band lek? - Eigen schuld')
                     print('Fietsenstalling afgebrand? - Eigen schuld')
-                    print('thermonucleaire oorlog uitgebroken? - Eigen schuld')
+                    print('Thermonucleaire oorlog uitgebroken? - Eigen schuld')
                     print('')
-                    del invoer #Zorgt dat er niet naar het blok hieronder gesprongen wordt.
+                    invoer = None
+                    time.sleep(5)
             if invoer == 2:
                 print('')
                 print('Voer uw naam in om uw persoonlijke gegevens op te vragen.')
