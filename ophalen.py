@@ -11,7 +11,9 @@ def fietsOphalen():
     for dict in dict_list:
         if nummer in dict['id'] and naam in dict['naam']:
             verwijderFiets(nummer)
+            print('')
             print('Fiets vrijgegeven!')
+            print('')
 
 # check of de fiets bij de gebruiker hoort
 # print ga fietsen en vervolgens verwijderen uit gestaalde fiets csv.
