@@ -36,7 +36,6 @@ def beheerdersPaneel():
             # bij het invoeren van keuze 1 importeert en leest hij gebruikers.csv
             if invoer == 1:
                 print("")
-                print('lees csv bestand')
                 print("")
                 with open('gebruikers.csv') as csvfile:
                     gebruikersgegevens = csv.reader(csvfile)
